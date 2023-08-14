@@ -6,6 +6,21 @@
 	objectVersion = 52;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		5056B5132A89BA4900CC9155 /* build */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 5056B5162A89BA4900CC9155 /* Build configuration list for PBXAggregateTarget "build" */;
+			buildPhases = (
+				5056B51B2A89BA6800CC9155 /* ShellScript */,
+			);
+			dependencies = (
+				5056B51A2A89BA5100CC9155 /* PBXTargetDependency */,
+			);
+			name = build;
+			productName = build;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		0B12EF1A203AD9C80058B169 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12EF19203AD9C80058B169 /* Options.swift */; };
 		0B12EF1D203ADD230058B169 /* ScrollUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12EF1C203ADD230058B169 /* ScrollUtils.swift */; };
@@ -56,6 +71,16 @@
 		23E3C96D21DCE8F10098B107 /* StatusItemPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E3C96C21DCE8F10098B107 /* StatusItemPopoverView.swift */; };
 		23E9673F23613D1100E652F6 /* PreferencesExceptionInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E9673E23613D1100E652F6 /* PreferencesExceptionInputViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5056B5192A89BA5100CC9155 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22142D981E25344E00E4BFBF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22142D9F1E25344E00E4BFBF;
+			remoteInfo = Mos;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0B0D5B5A2066195A0077C2AC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
@@ -360,6 +385,9 @@
 							};
 						};
 					};
+					5056B5132A89BA4900CC9155 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 				};
 			};
 			buildConfigurationList = 22142D9B1E25344E00E4BFBF /* Build configuration list for PBXProject "Mos" */;
@@ -389,6 +417,7 @@
 			projectRoot = "";
 			targets = (
 				22142D9F1E25344E00E4BFBF /* Mos */,
+				5056B5132A89BA4900CC9155 /* build */,
 			);
 		};
 /* End PBXProject section */
@@ -405,6 +434,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5056B51B2A89BA6800CC9155 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\nAPP_SOURCE_PATH=\"$BUILT_PRODUCTS_DIR/Mos.app\"\nDESTINATION_DIR=\"build\"\n\nrm -rf \"${PROJECT_DIR}/${DESTINATION_DIR}\"\n# Create the destination directory if it doesn't exist\nmkdir -p \"${PROJECT_DIR}/${DESTINATION_DIR}\"\n\n# Copy the app to the destination directory\nmv \"${APP_SOURCE_PATH}\" \"${PROJECT_DIR}/${DESTINATION_DIR}/Mos.app\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22142D9C1E25344E00E4BFBF /* Sources */ = {
@@ -458,6 +507,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5056B51A2A89BA5100CC9155 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22142D9F1E25344E00E4BFBF /* Mos */;
+			targetProxy = 5056B5192A89BA5100CC9155 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		22142DA91E25344E00E4BFBF /* Main.storyboard */ = {
@@ -689,6 +746,22 @@
 			};
 			name = Release;
 		};
+		5056B5142A89BA4900CC9155 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5056B5152A89BA4900CC9155 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -706,6 +779,15 @@
 			buildConfigurations = (
 				22142DC61E25344F00E4BFBF /* Debug */,
 				22142DC71E25344F00E4BFBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5056B5162A89BA4900CC9155 /* Build configuration list for PBXAggregateTarget "build" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5056B5142A89BA4900CC9155 /* Debug */,
+				5056B5152A89BA4900CC9155 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
